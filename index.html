@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>yujiang - blog</title><meta name="description"><meta name="author" content="yujiang"><meta name="copyright" content="yujiang"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.yujiang.workers.dev/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="website"><meta property="og:title" content="yujiang"><meta property="og:url" content="https://blog.yujiang.workers.dev/"><meta property="og:site_name" content="yujiang"><meta property="og:description"><meta property="og:image" content="https://blog.yujiang.workers.dev/img/avatar.png"><meta property="article:published_time" content="2020-10-10T16:27:23.222Z"><meta property="article:modified_time" content="2020-10-10T16:27:23.222Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: {"text":"富强,民主,文明,和谐,自由,平等,公正,法制,爱国,敬业,诚信,友善","fontSize":"15px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isSidebar: false
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">3</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://i.loli.net/2020/07/22/8SR7l2fKOrs6h4C.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">yujiang</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site_title">yujiang</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/yujiangqaq" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:yujiangqaq@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll_down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/09/21/Four-leaf-clover-planting-diary/" title="种植日记-四叶草">     <img class="post_bg" data-src="https://i.loli.net/2020/07/22/f9cmZJEPaB37IWx.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="种植日记-四叶草"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/21/Four-leaf-clover-planting-diary/" title="种植日记-四叶草">种植日记-四叶草</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-21 22:08:00"><i class="far fa-calendar-alt"></i>2020-09-21</time></div><div class="content">种植日记-四叶草day1-2020-9-21突突突发奇想，想种点东西玩玩，灵光乍现，想起了初一补习班英语老师送的一小盒速成四叶草，研究了下外包装：
+发芽适温：20°C-29°C
+生长适温：20°C-29°C
+适宜湿度：潮湿
+再去看一眼桌上的小爱，室温26°C，湿度62%。简直是天时地利人和！
+愉快地打开盖子，把培养土填满，把种子倒半包到土里铺均匀，再盖上薄薄一层土，浇上小半杯水，掂量掂量分量感觉差不多，再多就要泡坏了，放在书柜角落，发芽期大概要七天，在此之前，静候佳音……
+记得半天浇一次水。
+day2-2020-9-22 种植四叶草的第二天，早上匆匆忙忙地出门，忘记浇水了，中午也匆匆地回来，匆匆地走，又把浇水这事给忘了，不过晚上回家的时候，那小盒子的土还湿润着呢，最近的天气潮湿得很，以我自己的推测，大概24小时浇一次水都不算迟，浇多了反而还不好，会使种子缺氧死亡。
+倒水的时候还是不小心倒多了，几颗种子被水冲得浮了起来，仔细一看居然有了点变化，皮脱落了一层，冒出了很小很小的尖尖细芽。
+day3-2020-9-23昨天确认了适宜的温湿度，晚上看土还是极其湿润的，所以只是像完成一个仪式般地倒 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/07/25/Long-lost-tour/" title="久违的厦门周边一日游">     <img class="post_bg" data-src="https://i.loli.net/2020/07/22/f9cmZJEPaB37IWx.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="久违的厦门周边一日游"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/07/25/Long-lost-tour/" title="久违的厦门周边一日游">久违的厦门周边一日游</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-07-25 22:11:46"><i class="far fa-calendar-alt"></i>2020-07-25</time></div><div class="content">久违的厦门周边一日游我真的好久没出去玩了，疫情期间被困在家里N个月，就算是开学了也是学校和家两点一线，虽然有时候周末会出去溜溜，美名其曰“放风”，但是啊喂这跟我想象里正儿八经的放松差了九万八千里欸！
+So，周四在厦蓝群里问了下厦门周边哪里有好玩又好吃的地方可以去的，得到热心群友咪咪甩来的一个公众号链接
+热心群友咪咪发来的石码逛吃链接
+跟着咪咪走肯定不会错啦！mark掉，周六大早拉上咖喱人来了场说走就走的旅行~
+龙海-石码路上摇摇晃晃并经历了被傻吊百度地图导到死路后，我们摸进了漳州市区，非常繁华，其实一点都不逊色于厦门岛内，摸出ingress愉快地CAP掉一个在路边的po，到此一游吼，又被傻吊百度给导到了一家假的新行头（其实也不能说是假，只是没导到我们想去的那家啦）
+
+
+一开始不知道，也是吃一半我爸才发现不对头，不过吃都吃了嘛，假就假咯。
+卤面香香！五香也香香！
+卤面比吴再添的好恰，就是卤面应该有的那种味道啦，汤头浓厚，稠而不黏，蛋花打得特别碎，以及N块肥肉，白花花的肥肉~夹着碱面吃一点都不油，碱面什么的鱼酱最爱啦！五香是现炸的，热乎乎的从油锅里出来，用料厚实，肉肉很多！也好恰！btw好 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/07/11/hello-world/" title="Hello World">     <img class="post_bg" data-src="https://i.loli.net/2020/07/22/f9cmZJEPaB37IWx.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/07/11/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-07-11 22:11:46"><i class="far fa-calendar-alt"></i>2020-07-11</time></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post1$ hexo new "My New Post"
+
+More info: Writing
+Run server1$ hexo server
+
+More info: Server
+Generate static files1$ hexo generate
+
+More info: Generating
+Deploy to remote sites1$ hexo deploy
+
+More info: Deployment
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">yujiang</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">3</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">3</div></a></div></div><div class="card-info-bookmark is-center"><button class="button--animated" id="bookmark-it" title="加入书签"><i class="fas fa-bookmark"></i><span>加入书签</span></button></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yujiangqaq" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:yujiangqaq@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a href="/2020/09/21/Four-leaf-clover-planting-diary/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://i.loli.net/2020/07/22/f9cmZJEPaB37IWx.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="种植日记-四叶草" alt="种植日记-四叶草"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/09/21/Four-leaf-clover-planting-diary/" title="种植日记-四叶草">种植日记-四叶草</div><time class="aside-post_meta post-meta__date" title="发表于 2020-09-21 22:08:00">2020-09-21</time></div></a></div><div class="aside-recent-post"><a href="/2020/07/25/Long-lost-tour/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://i.loli.net/2020/07/22/f9cmZJEPaB37IWx.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="久违的厦门周边一日游" alt="久违的厦门周边一日游"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/07/25/Long-lost-tour/" title="久违的厦门周边一日游">久违的厦门周边一日游</div><time class="aside-post_meta post-meta__date" title="发表于 2020-07-25 22:11:46">2020-07-25</time></div></a></div><div class="aside-recent-post"><a href="/2020/07/11/hello-world/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://i.loli.net/2020/07/22/f9cmZJEPaB37IWx.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="Hello World" alt="Hello World"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/07/11/hello-world/" title="Hello World">Hello World</div><time class="aside-post_meta post-meta__date" title="发表于 2020-07-11 22:11:46">2020-07-11</time></div></a></div></div></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/diary/" style="font-size: 16px; color: #999">diary</a> <a href="/tags/travel/" style="font-size: 16px; color: #999">travel</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 16px; color: #999">日常</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/07/"><span class="card-archive-list-date">七月 2020</span><span class="card-archive-list-count">2</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">3</div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 By yujiang</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button class="translate_chn_to_cht" id="translateLink" title="简繁转换">简</button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script defer id="ribbon" src="/js/third-party/canvas-ribbon.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="true"></script><script id="ribbon_piao" mobile="false" src="/js/third-party/piao.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/third-party/ClickShowText.js"></script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script>var subtitleType = function () {
+  var subtitleEffect = true
+  fetch('https://api.btstu.cn/yan/api.php?charset=utf-8&encode=json',)
+    .then(function (res) {
+      return res.json()
+    })
+    .then(function (data) {
+      if (subtitleEffect) {
+        var sub = "很高兴见到你:),Nice to meet you!".length == 0 ? new Array() : "很高兴见到你:),Nice to meet you!".split(',')
+        var both = sub.unshift(data.text)
+        var typed = new Typed('#subtitle', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
+        })
+      } else {
+        document.getElementById('subtitle').innerHTML = data.text
+      }
+    })
+    .catch(function (err) {
+      console.error(err)
+    })
+}
+window.addEventListener('load', subtitleType)
+</script></body></html>
